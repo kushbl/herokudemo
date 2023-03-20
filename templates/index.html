@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Species Predictor</title>
+    <style>
+        form.groove {border-style: groove;}
+    body {
+        background-color: hwb(78 68% 10%);
+        }
+        h1{
+
+            color: rgba(255, 0, 64, 0.925) ;
+            font-size: 30px;
+            background-color:rgba(0, 183, 255, 0.452);
+        }
+        
+        
+
+
+    </style>
+</head>
+<body>
+
+
+    <h1><i><u>Species Predictor</u></i></h1>
+    {% if result %}
+        <p>{{ result }}</p>
+    {% endif %}
+    
+    <form method="POST" action="/predict" class="groove" style="background-color: rgba(137, 43, 226, 0.534);">
+        <label style="background-color: bisque;">sepal_length</label><br>
+        <input type="text" name="sepal_length"><br><br>
+        
+
+        <label style="background-color: bisque;">sepal_width</label><br>
+        <input type="text" name="sepal_width"><br><br>
+
+        <label style="background-color: bisque;">petal_length</label><br>
+        <input type="text" name="petal_length"><br><br>
+
+        <label style="background-color: bisque;">petal_width</label><br>
+        <input type="text" name="petal_width"><br><br>
+
+        <button type="submit" formaction="/predict" >Predict w/o scaling</button><br><br>
+        <button type="submit" formaction="/predicts" >Predict with scaling</button><br><br>
+        
+    </form>
+
+</body>
+</html>
